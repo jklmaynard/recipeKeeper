@@ -8,8 +8,8 @@ recipeKeeper.config(function($stateProvider) {
   });
 
   $stateProvider.state('recipes', {
-    url: "/recipes"
+    url: "/recipes",
     templateUrl: "partials/recipes.html"
-  })
+  });
 
 });
