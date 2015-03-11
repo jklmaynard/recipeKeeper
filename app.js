@@ -16,7 +16,7 @@ recipeKeeper.config(function($stateProvider) {
   $stateProvider.state('recipes.instructions', {
     url: "/:recipeId",
     templateUrl: "partials/recipes.instructions.html",
-    controller: "RecipesCtrl"
+    controller: "InstructionsCtrl"
   });
 
 });
