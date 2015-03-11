@@ -3,7 +3,7 @@
 <h3>Check out what's cooking for {{recipe.name}}</h3>
 
 <div class="col-md-12">
-  <form ng-submit="addInstructions()">
+  <form ng-submit="addInstructions(); showAll = true" ng-hide="showAll">
     <div class="form-group">
       <input type="text" ng-model="cookTime" placeholder="How long will it take?" class="form-control">
     </div>
@@ -19,12 +19,18 @@
     <button type="submit" class="btn btn-sm btn-success">Add Instructions</button>
   </form>
 </div>
-<div class="col-md-12">
-  <h4>{{recipe.cookTime}}</h4>
-  <h5>{{recipe.ovenTemp}}</h5>
-  <p>{{recipe.steps}}</p>
-  <br>
-  <p>Pair with {{recipe.pairings}}</p>
-</div>
 
-<h3><a ui-sref="recipes">Back</a></h3>
+<span ng-show="showAll">
+  <div class="col-md-12">
+    <h4>{{recipe.cookTime}}</h4>
+    <h5>{{recipe.ovenTemp}}</h5>
+    <p>{{recipe.steps}}</p>
+    <br>
+    <p>Pair with {{recipe.pairings}}</p>
+  </div>
+</span>
+
+<div class="col-md-12">
+  <br>
+  <button type="submit" class="btn btn-sm btn-primary" ui-sref="recipes">Back</button>
+</div>
