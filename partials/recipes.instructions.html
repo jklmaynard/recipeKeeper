@@ -1,1 +1,25 @@
+
+
 <h3>Check out what's cooking for {{recipe.name}}</h3>
+
+<div class="col-md-12">
+  <form ng-submit="addInstructions()">
+    <div class="form-group">
+      <input type="text" ng-model="instructions.cookTime" placeholder="How long will it take?" class="form-control">
+    </div>
+    <div class="form-group">
+      <input type="text" ng-model="instructions.ovenTemp" placeholder="Set the oven?" class="form-control"><br>
+    </div>
+    <div class="form-group">
+      <input type="text" ng-model="instructions.pairings" placeholder="Pair with?" class="form-control">
+    </div>
+    <div class="form-group">
+      <textarea ng-model="instructions.steps" placeholder="Write steps here" rows=15 class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-sm btn-success">Add Instructions</button>
+  </form>
+</div>
+<div class="col-md-12">
+  <h4>{{instructions}}</h4>
+
+</div>
