@@ -4,4 +4,5 @@ recipeKeeper.factory('RecipesFactory', function RecipesFactory() {
   factory.addRecipe = function() {
     factory.recipes.push({ name: factory.recipeName, id: factory.recipes.length + 1, })
   }
+  return factory;
 });
