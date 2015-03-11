@@ -7,4 +7,9 @@ recipeKeeper.config(function($stateProvider) {
     templateUrl: "partials/home.html"
   });
 
+  $stateProvider.state('recipes', {
+    url: "/recipes"
+    templateUrl: "partials/recipes.html"
+  })
+
 });
