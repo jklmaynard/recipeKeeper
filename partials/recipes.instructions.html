@@ -2,16 +2,22 @@
 
 <h3>Check out what's cooking for {{recipe.name}}</h3>
 
-<span ng-show="showAll = true">
-  <div class="col-md-12">
-    <h4>Cook Time: {{recipe.cookTime}}</h4>
-    <h5>Oven Tempature: {{recipe.ovenTemp}}</h5>
-    <h5>Steps:</h5>
-    <p>{{recipe.steps}}</p>
-    <br>
-    <p>Pair with {{recipe.pairings}}</p>
-  </div>
-</span>
+<div class="col-md-12">
+    <span ng-show="showAll = true">
+    <div class="col-md-4">
+      <h5>Cook Time:</h5>
+      <p>{{recipe.cookTime}}</p>
+      <h5>Oven Tempature:</h5>
+      <p>{{recipe.ovenTemp}}</p>
+    </div>
+    <div class="col-md-8">
+      <h5>Steps:</h5>
+      <p>{{recipe.steps}}</p>
+      <h5>Pair with:</h5>
+      <p>{{recipe.pairings}}</p>
+    </div>
+  </span>
+</div>
 
 <span ng-show="editInstructions" ng-hide="showAll">
   <div class="col-md-12">
