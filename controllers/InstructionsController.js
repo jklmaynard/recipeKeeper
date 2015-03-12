@@ -10,9 +10,12 @@ recipeKeeper.controller('InstructionsCtrl', function InstructionsCtrl($scope, $s
 
   $scope.addIngredients = function() {
     $scope.recipe.ingredients.push({
-      ingredient: $scope.ingredient
+      ingredient: $scope.ingredient,
       amount: $scope.amount
     });
-  }
+
+    $scope.ingredient = null;
+    $scope.amount = null;
+  };
 
 })
