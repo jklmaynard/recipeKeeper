@@ -1,4 +1,4 @@
-var recipeKeeper = angular.module('recipeKeeper', ['ui.router', 'firebase']);
+var recipeKeeper = angular.module('recipeKeeper', ['ui.router']);
 
 recipeKeeper.config(function($stateProvider) {
 
