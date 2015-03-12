@@ -6,10 +6,6 @@ recipeKeeper.controller('InstructionsCtrl', function InstructionsCtrl($scope, $s
     $scope.recipe.steps = $scope.steps;
     $scope.recipe.pairings = $scope.pairings;
 
-    $scope.cookTime = null;
-    $scope.ovenTemp = null;
-    $scope.steps = null;
-    $scope.pairings = null;
   };
 
   $scope.editCookTime = function() {

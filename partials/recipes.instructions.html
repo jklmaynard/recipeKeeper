@@ -2,60 +2,39 @@
 
 <h3>Check out what's cooking for {{recipe.name}}</h3>
 
-<div class="col-md-12">
-  <form ng-submit="addInstructions(); showAll = true" ng-hide="showAll">
-    <div class="form-group">
-      <input type="text" ng-model="cookTime" placeholder="How long will it take?" class="form-control">
-    </div>
-    <div class="form-group">
-      <input type="text" ng-model="ovenTemp" placeholder="Set the oven?" class="form-control"><br>
-    </div>
-    <div class="form-group">
-      <input type="text" ng-model="pairings" placeholder="Pair with?" class="form-control">
-    </div>
-    <div class="form-group">
-      <textarea ng-model="steps" placeholder="Write steps here" rows=15 class="form-control"></textarea>
-    </div>
-    <button type="submit" class="btn btn-sm btn-success">Add Instructions</button>
-  </form>
-</div>
-
-<span ng-show="showAll">
+<span ng-show="showAll = true">
   <div class="col-md-12">
-    <span ng-click="editingCookTime = true" ng-hide="editingCookTime">
-      <h4>Cook Time: {{recipe.cookTime}}</h4>
-    </span>
-    <form ng-submit="editCookTime(); editingCookTime = false" ng-show="editingCookTime">
-      <input type="text" ng-model="cookTime" class="form-control">
-      <button type="submit" class="btn btn-sm">Save</button>
-    </form>
-    <span ng-click="editingOvenTemp = true" ng-hide="editingOvenTemp">
-      <h5>Oven Tempature: {{recipe.ovenTemp}}</h5>
-    </span>
-    <form ng-submit="editOvenTemp(); editingOvenTemp = false" ng-show="editingOvenTemp">
-      <input type="text" ng-model="ovenTemp" class="form-control">
-      <button type="submit" class="btn btn-sm">Save</button>
-    </form>
-    <span ng-click="editingSteps = true" ng-hide="editingSteps">
-      <h5>Steps:</h5>
-      <p>{{recipe.steps}}</p>
-    </span>
-      <form ng-submit="editSteps(); editingSteps = false" ng-show="editingSteps">
-        <textarea rows=15 ng-model="steps" class="form-control"></textarea>
-        <button type="submit" class="btn btn-sm">Save</button>
-      </form>
-      <br>
-    <span ng-click="editingPair = true" ng-hide="editingPair">
-      <p>Pair with {{recipe.pairings}}</p>
-    </span>
-    <form ng-submit="editPairings(); editingPair = false" ng-show="editingPair">
-      <input type="text" ng-model="pairings" class="form-control">
-      <button type="submit" class="btn btn-sm">Save</button>
+    <h4>Cook Time: {{recipe.cookTime}}</h4>
+    <h5>Oven Tempature: {{recipe.ovenTemp}}</h5>
+    <h5>Steps:</h5>
+    <p>{{recipe.steps}}</p>
+    <br>
+    <p>Pair with {{recipe.pairings}}</p>
+  </div>
+</span>
+
+<span ng-show="editInstructions" ng-hide="showAll">
+  <div class="col-md-12">
+    <form ng-submit="addInstructions(); showAll = true; editInstructions = false">
+      <div class="form-group">
+        <input type="text" ng-model="cookTime" placeholder="How long will it take?" class="form-control">
+      </div>
+      <div class="form-group">
+        <input type="text" ng-model="ovenTemp" placeholder="Set the oven?" class="form-control"><br>
+      </div>
+      <div class="form-group">
+        <input type="text" ng-model="pairings" placeholder="Pair with?" class="form-control">
+      </div>
+      <div class="form-group">
+        <textarea ng-model="steps" placeholder="Write steps here" rows=15 class="form-control"></textarea>
+      </div>
+      <button type="submit" class="btn btn-sm btn-success">Add Instructions</button>
     </form>
   </div>
 </span>
 
 <div class="col-md-12">
   <br>
-  <button type="submit" class="btn btn-sm btn-primary" ui-sref="recipes">Back</button>
+  <button class="btn btn-sm btn-primary" ui-sref="recipes">Back</button>
+  <button ng-click="editInstructions = true" class="btn btn-sm btn-warning">Edit</button>
 </div>
