@@ -1,0 +1,68 @@
+
+
+<h3>Check out what's cooking for {{recipe.name}}</h3>
+
+<div class="col-md-12">
+    <span ng-show="showAll = true">
+    <div class="col-md-4">
+      <h5>Cook Time:</h5>
+      <p>{{recipe.cookTime}}</p>
+      <h5>Oven Tempature:</h5>
+      <p>{{recipe.ovenTemp}}</p>
+    </div>
+    <div class="col-md-8">
+      <h5>Steps:</h5>
+      <p>{{recipe.steps}}</p>
+      <h5>Pair with:</h5>
+      <p>{{recipe.pairings}}</p>
+    </div>
+  </span>
+</div>
+
+<span ng-show="editInstructions" ng-hide="showAll">
+  <div class="col-md-12">
+    <form ng-submit="addInstructions(); showAll = true; editInstructions = false">
+      <div class="form-group">
+        <input type="text" ng-model="cookTime" placeholder="How long will it take?" class="form-control">
+      </div>
+      <div class="form-group">
+        <input type="text" ng-model="ovenTemp" placeholder="Set the oven?" class="form-control"><br>
+      </div>
+      <div class="form-group">
+        <input type="text" ng-model="pairings" placeholder="Pair with?" class="form-control">
+      </div>
+      <div class="form-group">
+        <textarea ng-model="steps" placeholder="Write steps here" rows=15 class="form-control"></textarea>
+      </div>
+      <button type="submit" class="btn btn-sm btn-success">Add Instructions</button>
+    </form>
+  </div>
+</span>
+
+<div class="col-md-12">
+  <br>
+  <button class="btn btn-sm btn-primary" ui-sref="recipes">Back</button>
+  <button ng-click="editInstructions = true" class="btn btn-sm btn-warning">Edit</button>
+</div>
+
+<div class="col-md-4">
+  <br>
+  <form ng-submit="addIngredients()">
+    <div class="form-group">
+      <input type="text" ng-model="ingredient" placeholder="ingredient" class="form-control">
+    </div>
+    <div class="form-group">
+      <input type="text" ng-model="amount" placeholder="amount" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-sm btn-primary">Add Ingredient</button>
+  </form>
+</div>
+
+<div class="col-md-8">
+  <h5>Ingredients:</h5>
+  <ul>
+    <li ng-repeat="item in recipe.ingredients">
+      {{item.amount}}, {{item.ingredient}}
+    </li>
+  </ul>
+</div>
