@@ -12,6 +12,10 @@ img {
   margin: 10px 0;
 }
 
+#recipe {
+  margin: 5px 0 0px 10px;
+}
+
 #delete {
-  margin: 10px 0 0px 10px;
+  margin: 0px 15px;
 }
