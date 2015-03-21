@@ -5,6 +5,7 @@
     <ul>
       <li ng-repeat="item in recipes">
         <a ui-sref="recipes.instructions({ recipeId: item.id })">{{item.name}}</a>
+        <button ng-click="RecipesFactory.deleteRecipe(item)" id="delete" class="btn btn-sm btn-danger">Delete</button>
       </li>
     </ul>
   </div>
