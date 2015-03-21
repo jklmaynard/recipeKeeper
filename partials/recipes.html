@@ -1,0 +1,22 @@
+<div ui-view>
+    <h2>Search for or add a recipe</h2>
+
+  <div class="col-md-12">
+    <ul>
+      <li ng-repeat="item in recipes">
+        <a ui-sref="recipes.instructions({ recipeId: item.id })">{{item.name}}</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-md-12">
+    <form ng-submit="RecipesFactory.addRecipe()" class="form-inline">
+      <div class="form-group">
+        <input type="text" ng-model="RecipesFactory.recipeName" placeholder="Recipe Name">
+      </div>
+      <button type="submit" class="btn btn-sm btn-success">Add Recipe</button>
+    </form>
+    <br>
+  </div>
+
+</div>

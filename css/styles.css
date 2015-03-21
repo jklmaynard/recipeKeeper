@@ -1,0 +1,12 @@
+li {
+  list-style: none;
+}
+
+img {
+  min-width: 750px;
+  min-height: 200px;
+}
+
+#what-julia-thinks {
+  margin: 10px 0;
+}
